@@ -1,0 +1,24 @@
+name: Staging to master
+on: 
+  workflow_dispatch:
+    inputs:
+      merge:
+        description: 'Merge Staging to Main'
+        required: true
+jobs:
+  merge-staging-to-main:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set Git config
+      run: |
+          git config --local user.email "mefogus@gmail.com"
+          git config --local user.name "fogus (auto)"
+    - name: Merge master back to dev
+      run: |
+          git fetch --unshallow
+          git checkout staging
+          git pull
+          git checkout main
+          git merge --no-ff staging -m "Auto-merge staging to master"
+          git push
