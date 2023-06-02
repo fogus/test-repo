@@ -20,5 +20,5 @@ jobs:
           git checkout staging
           git pull
           git checkout main
-          git merge --no-ff staging -m "Auto-merge staging to master"
+          git merge --no-ff staging -m "Auto-merge staging to main"
           git push
