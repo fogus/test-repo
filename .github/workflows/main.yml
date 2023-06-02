@@ -13,12 +13,14 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Merge staging to main
         run: |
           git config user.name "fogus"
           git config user.email "mefogus@gmail.com"
+          git checkout -b staging origin/staging
+          git pull
           git checkout main
-          git merge staging --no-ff --no-edit --author "fogus"
+          git merge staging --no-edit
           git push origin main
