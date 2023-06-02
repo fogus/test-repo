@@ -1,11 +1,11 @@
 # test-repo
 
-foo var
-after lock
-hard lock
-
-this is a test!
-main-feeder commit
-PR req
-PR req, no bypass
-local no_push
+- foo var
+- after lock
+- hard lock
+- this is a test!
+- main-feeder commit
+- PR req
+- PR req, no bypass
+- local no_push
+- to-staging -- merge with action?
