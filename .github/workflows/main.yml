@@ -20,5 +20,5 @@ jobs:
           git config user.name "fogus"
           git config user.email "mefogus@gmail.com"
           git checkout main
-          git merge staging --no-ff --no-edit --author "fogus"
+          git merge staging --no-ff --no-edit
           git push origin main
