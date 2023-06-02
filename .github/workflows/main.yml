@@ -19,7 +19,8 @@ jobs:
         run: |
           git config user.name "fogus"
           git config user.email "mefogus@gmail.com"
+          git checkout -b staging origin/staging
+          git pull
           git checkout main
-          git fetch staging
-          git merge staging --no-ff --no-edit
+          git merge staging --no-edit
           git push origin main
